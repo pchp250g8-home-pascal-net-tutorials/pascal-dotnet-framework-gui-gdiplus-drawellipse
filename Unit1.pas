@@ -2,12 +2,14 @@
 
 interface
 
-uses System, System.Drawing, System.Windows.Forms;
+uses System, System.Drawing,
+     System.Windows.Forms;
 
 type
   Form1 = class(Form)
     procedure Form1_Paint(sender: Object; e: PaintEventArgs);
     procedure Form1_Resize(sender: Object; e: EventArgs);
+    procedure Form1_Load(sender: Object; e: EventArgs);
   {$region FormDesigner}
   internal
     {$resource Unit1.Form1.resources}
@@ -34,6 +36,11 @@ end;
 procedure Form1.Form1_Resize(sender: Object; e: EventArgs);
 begin
   Invalidate();
+end;
+
+procedure Form1.Form1_Load(sender: Object; e: EventArgs);
+begin
+  BackColor := Color.Black;
 end;
 
 end.
